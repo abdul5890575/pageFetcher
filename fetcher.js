@@ -16,6 +16,6 @@ request(args[0], (error, response, body) => {
 const write= (body) =>{
   fs.writeFile(`${args[1]}`, `${body}`, function (err) {
     if (err) throw err;
-    console.log('Saved! to pagefetcher.txt');
+    console.log(`Saved! to ${args[1]}`);
   });
 }
