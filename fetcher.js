@@ -1,4 +1,4 @@
-let args = process.argv.slice(2,3);
+let args = process.argv.slice(2,4);
 console.log(args)
 
 const request = require('request');
@@ -14,8 +14,8 @@ request(args[0], (error, response, body) => {
 });
 
 const write= (body) =>{
-  fs.writeFile('pagefetcher.txt', `${body}`, function (err) {
+  fs.writeFile(`${args[1]}`, `${body}`, function (err) {
     if (err) throw err;
-    console.log('Saved!');
+    console.log('Saved! to pagefetcher.txt');
   });
 }
